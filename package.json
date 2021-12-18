@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "server": "npm start",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
@@ -15,5 +18,9 @@
     "helmet": "^4.6.0",
     "http-errors": "^2.0.0",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.0",
+    "nodemon": "^2.0.15"
   }
 }
