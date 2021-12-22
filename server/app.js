@@ -5,10 +5,11 @@ const cors = require("cors");
 const compression = require("compression");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const db = require("./database/database.js");
 
 const app = express();
 
-const apiRouter = require("./routes/apiRouter")
+const apiRouter = require("./routes/api.router");
 
 const corsOptions = {
   origin: "http://localhost:8081",
@@ -25,16 +26,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static("public"));
 
-
 app.use("/api", apiRouter);
 
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
-
-/* app.get("/*", (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, "public", "index.html"));
-}); */
-
 
 module.exports = app;
