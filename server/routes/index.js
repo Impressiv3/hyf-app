@@ -1,9 +1,9 @@
 const { Router } = require("express");
 const router = Router();
-const controllers = require("../controllers");
+const meal = require("../controllers/meal.controller")
 
-router.get("/meals", (req, res) => res.json({ message: "this is meals" }));
-router.post("/meals", controllers.createMeal);
+router.get("/meals", meal.findAll);
+router.post("/meals", meal.create);
 
 router.get("/", (req, res) => res.send("This is Api!"));
 

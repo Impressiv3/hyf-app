@@ -6,7 +6,6 @@ const cors = require("cors");
 const compression = require("compression");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-/* const db = require("./database/database"); */
 const db = require("./models/")
 
 const app = express();
