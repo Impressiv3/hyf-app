@@ -6,6 +6,7 @@ const cors = require("cors");
 const compression = require("compression");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const db = require("./database/database");
 
 const app = express();
 
@@ -23,6 +24,10 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static("public"));
+
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and re-sync db.");
+});
 
 app.use("/api", routes);
 

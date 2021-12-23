@@ -16,16 +16,12 @@ module.exports = {
       "meals",
       [
         {
-          title: "Hamburger",
-          description: "Nagyon jo",
-          createdAt: new Date(),
-          updatedAt: new Date(),
+          title: "aaaaa",
+          description: "bbbbbb",
         },
         {
-          title: "Pizza",
-          description: "Kiraly!",
-          createdAt: new Date(),
-          updatedAt: new Date(),
+          title: "cccccc",
+          description: "dddddd",
         },
       ],
       {},
@@ -40,6 +36,6 @@ module.exports = {
      * await queryInterface.bulkDelete('People', null, {});
      */
 
-    await queryInterface.bulkDelete("meals", null, {});
+    await queryInterface.bulkDelete("Meals", null, {});
   },
 };
