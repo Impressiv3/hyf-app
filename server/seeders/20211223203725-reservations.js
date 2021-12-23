@@ -12,23 +12,23 @@ module.exports = {
      * }], {});
      */
     await queryInterface.bulkInsert(
-      "Reviews",
+      "Reservations",
       [
         {
-          title: "Was a good one",
-          description: "I really liked it!",
-          rating: 5,
-          mealId: "1",
-          createdAt: new Date(),
-          updatedAt: new Date(),
+          mealId: 1,
+          reserved_seats: 6,
+          first_name: "Balint",
+          last_name: "Szabad",
+          email: "whatever@hotmail.com",
+          phone: "222555666",
         },
         {
-          title: "Terrible",
-          description: "Garbage Fujj",
-          rating: 5,
-          mealId: "11",
-          createdAt: new Date(),
-          updatedAt: new Date(),
+          mealId: 11,
+          reserved_seats: 4,
+          first_name: "John",
+          last_name: "Doe",
+          email: "johndoe@hotmail.com",
+          phone: "666555444",
         },
       ],
       {},
@@ -42,6 +42,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-     await queryInterface.bulkDelete('Reviews', null, {});
+    await queryInterface.bulkDelete("Reservations", null, {});
   },
 };

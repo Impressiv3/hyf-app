@@ -41,7 +41,7 @@ const findAllWithTasks = async () => {
     include: [
       {
         model: db.Review,
-      },
+      }
     ],
   });
   console.log("All users with their associated tasks:", JSON.stringify(meals, null, 4));

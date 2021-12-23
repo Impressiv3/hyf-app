@@ -20,7 +20,8 @@ module.exports = {
           description: "A very well made pizza for everyone",
           location: "Copenhagen",
           price: "120",
-          max_seats: "12",
+          available_seats: 12,
+          max_seats: 12,
           date: new Date(),
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -29,8 +30,9 @@ module.exports = {
           title: "Hamburger",
           description: "A very well made pizza for everyone",
           location: "London",
-          price: "110",
-          max_seats: "10",
+          price: 110,
+          available_seats: 10,
+          max_seats: 10,
           date: new Date(),
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -47,5 +49,8 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+     await queryInterface.bulkDelete('Meals', null, {});
   },
 };
+
+
