@@ -20,7 +20,10 @@ fs.readdirSync(__dirname)
     return file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js";
   })
   .forEach((file) => {
-    const model = require(path.join(process.cwd(),"server", "models", file))(sequelize, Sequelize.DataTypes);
+    const model = require(path.join(__dirname, "..", "models", file))(
+      sequelize,
+      Sequelize.DataTypes,
+    );
     db[model.name] = model;
   });
 
@@ -34,5 +37,3 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
-
-
