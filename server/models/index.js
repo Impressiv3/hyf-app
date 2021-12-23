@@ -1,5 +1,6 @@
 "use strict";
 
+const { text } = require("express");
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
@@ -35,4 +36,20 @@ db.Sequelize = Sequelize;
 
 module.exports = db;
 
+const findAllWithTasks = async () => {
+  const meals = await db.Meal.findAll({
+    include: [
+      {
+        model: db.Review,
+      },
+    ],
+  });
+  console.log("All users with their associated tasks:", JSON.stringify(meals, null, 4));
+};
 
+const run = async () => {
+  await findAllWithTasks();
+  await process.exit();
+};
+
+run();

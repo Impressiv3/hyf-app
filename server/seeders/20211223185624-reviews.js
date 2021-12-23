@@ -11,17 +11,24 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-
     await queryInterface.bulkInsert(
-      "meals",
+      "Reviews",
       [
         {
-          title: "aaaaa",
-          description: "bbbbbb",
+          title: "Was a good one",
+          description: "I really liked it!",
+          rating: 5,
+          mealId: "1",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
-          title: "cccccc",
-          description: "dddddd",
+          title: "Terrible",
+          description: "Garbage Fujj",
+          rating: 5,
+          mealId: "11",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       {},
@@ -35,7 +42,5 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-
-    await queryInterface.bulkDelete("Meals", null, {});
   },
 };
