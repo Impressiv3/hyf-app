@@ -21,6 +21,8 @@ module.exports = {
           last_name: "Szabad",
           email: "whatever@hotmail.com",
           phone: "222555666",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           mealId: 11,
@@ -29,6 +31,8 @@ module.exports = {
           last_name: "Doe",
           email: "johndoe@hotmail.com",
           phone: "666555444",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       {},
